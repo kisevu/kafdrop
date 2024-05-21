@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class MessagePublisher {
-    private KafkaTemplate<String,Object> kafkaTemplate;
+    private final KafkaTemplate<String,Object> kafkaTemplate;
 
 
     public void sendMessageToTopic(String message){
