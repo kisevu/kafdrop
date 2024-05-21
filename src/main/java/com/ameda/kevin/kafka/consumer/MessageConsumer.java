@@ -5,6 +5,8 @@ package com.ameda.kevin.kafka.consumer;/*
 *
 */
 
+
+import com.ameda.kevin.kafka.producer.dto.Worker;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
@@ -14,8 +16,8 @@ import org.springframework.stereotype.Service;
 public class MessageConsumer {
 
 
-    @KafkaListener(topics = "ameda",groupId = "ameda-group-2024")
-    public void consume(String message){
-        log.info("message received: {}",message);
+    @KafkaListener(topics = "kevin",groupId = "ameda-group-2024")
+    public void consume(Worker worker){
+        log.info("Email:{} and Contact number:{}",worker.getEmail(),worker.getContactNo());
     }
 }
