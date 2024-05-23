@@ -17,17 +17,18 @@ import org.springframework.stereotype.Service;
 public class MessageConsumer {
 
 
-//    @KafkaListener(topics = "kevin",groupId = "ameda-group-2024")
-//    public void consume(Worker worker){
-//        log.info("Email:{} and Contact number:{}",worker.getEmail(),worker.getContactNo());
-//    }
+    @KafkaListener(topics = "kevin",groupId = "ameda-group-2024")
+    public void consume(Worker worker){
+        log.info("Email:{} and Contact number:{}",worker.getEmail(),worker.getContactNo());
+    }
+
     //same way we can send data to a particular partition by specifying,
     //the same way we can consume from a specified consumer as well
     //Below is the implementation
 
-    @KafkaListener(topics = "kevin",groupId = "ameda-group-2024",
-            topicPartitions ={@TopicPartition(topic="kevin",partitions =  {"3"})})
-    public void consume(Worker worker){
-        log.info("Email:{} and Contact number:{}",worker.getEmail(),worker.getContactNo());
-    }
+//    @KafkaListener(topics = "kevin",groupId = "ameda-group-2024",
+//            topicPartitions ={@TopicPartition(topic="kevin",partitions =  {"3"})})
+//    public void consume(Worker worker){
+//        log.info("Email:{} and Contact number:{}",worker.getEmail(),worker.getContactNo());
+//    }
 }

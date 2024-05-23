@@ -20,17 +20,17 @@ public class MessagePublisher {
 //        kafkaTemplate.send("ameda",message);
 //    }
 
-//    public void sendObjectToTopic(Worker worker){
-//        kafkaTemplate.send("kevin",worker);
-//    }
+    public void sendObjectToTopic(Worker worker){
+        kafkaTemplate.send("kevin",worker);
+    }
 
 
 
     //I can define to which partition that messages should go to
     //For this, we need informing the KafkaTemplate and make it know
 
-    public void sendObjectToTopic(Worker worker){
-        kafkaTemplate.send("kevin",4,null,worker);
-        //I have explicitly provided the partition and the key which is a unique identifier.
-    }
+//    public void sendObjectToTopic(Worker worker){
+//        kafkaTemplate.send("kevin",4,null,worker);
+//        //I have explicitly provided the partition and the key which is a unique identifier.
+//    }
 }
